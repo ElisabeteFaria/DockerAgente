@@ -7,7 +7,7 @@ pipeline{
         docker_hub_account = "wakin2k"
         repo_name = "docker-jenkins"
         image_tag = "latest"
-        docker_hub_login = credentials('DockerHub_Credentials')
+        docker_hub_login = credentials('docker_hub_login')
     }
     stages{
         stage("Build Image"){
