@@ -4,8 +4,8 @@ pipeline{
     }
     environment{
         //Docker Hub
-        docker_hub_account = "efaria"
-        repo_name = "docker-agent"
+        docker_hub_account = "wakin2k"
+        repo_name = "docker-jenkins"
         image_tag = "latest"
         docker_hub_login = credentials('DockerHub_Credentials')
     }
