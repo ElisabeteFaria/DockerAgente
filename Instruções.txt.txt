@@ -1,0 +1,21 @@
+docker-compose up 
+
+ou
+
+MySQL
+
+docker run --name database --rm -d -v notas_db:/var/lib/mysql --env-file env/mysql.env --network notas mysql --default-authentication-plugin=mysql_native_password
+
+docker exec -it database mysql -u atlas -p [mysql_secret]
+
+Flask
+
+docker run 
+ --name flask --rm -v C:\Users\0101786\Desktop\Formacao\Docker\Formação\Multi-Container\flask-mysql:/app -p 81:81 -d --network notas python_mysql
+
+Adminer
+
+docker run --name adminer -d --network notas --rm -p 8000:8080 adminer
+
+
+C:\Users\0101786\Desktop\Formacao\Docker\Formação\Multi-Container\flask-mysql\db.yaml

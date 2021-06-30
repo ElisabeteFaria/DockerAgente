@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  database:
+    image: mysql
+    container_name: 'database'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    env_file: 
+      - env/mysql.env
+  flask:
+    build: ./
+    container_name: 'flask'
+    ports:
+      - 81:81
+    volumes:
+      - ./:/app
+    depends_on:
+      - adminer
+  adminer:
+    image: adminer
+    container_name: 'adminer'
+    ports:
+      - 8000:8080
+    depends_on: 
+      - database
+
+volumes:
+  mysql-data:
+    external: true

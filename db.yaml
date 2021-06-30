@@ -1,0 +1,4 @@
+mysql_host: 'database'
+mysql_user: 'atlas'
+mysql_password: 'secret'
+mysql_db: 'database'
