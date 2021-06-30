@@ -4,10 +4,10 @@ pipeline{
     }
     environment{
         //Docker Hub
-        docker_hub_account = "wakin2k"
-        repo_name = "docker-jenkins"
+        docker_hub_account = "efaria"
+        repo_name = "docker-agent"
         image_tag = "latest"
-        docker_hub_login = credentials('docker_hub_login')
+        docker_hub_login = credentials('DockerHub_Credentials')
     }
     stages{
         stage("Build Image"){
